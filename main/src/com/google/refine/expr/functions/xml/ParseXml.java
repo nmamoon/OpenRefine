@@ -62,7 +62,11 @@ public class ParseXml implements Function {
                 }
             }
         }
-        return new EvalError(ControlFunctionRegistry.getFunctionName(this) + " expects a single String as an argument");
+        return new EvalError(ControlFunctionRegistry.getFunctionName(this)
+                + "() received invalid argument: '"
+                + new Type().call(bindings, args)
+                + "'."
+                + " A single String is required.");
     }
 
 

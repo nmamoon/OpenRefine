@@ -52,10 +52,18 @@ public class OwnText implements Function {
                 return e1.ownText();
 
             }else{
-                return new EvalError(ControlFunctionRegistry.getFunctionName(this) + " failed as the first parameter is not an XML or HTML Element.  Please first use parseHtml(string) and select(query) prior to using this function");
+                return new EvalError(ControlFunctionRegistry.getFunctionName(this)
+                        + "() received invalid first parameter: '"
+                        + new Type().call(bindings, args)
+                        + "'."
+                        + " An XML or HTML Element is required. Please first use parseXml() or parseHtml() and select(query) prior to using this function");
             }
         }
-        return new EvalError(ControlFunctionRegistry.getFunctionName(this) + " expects a single XML or HTML element as an argument");
+        return new EvalError(ControlFunctionRegistry.getFunctionName(this)
+                + "() received invalid argument: '"
+                + new Type().call(bindings, args)
+                + "'."
+                + " A single XML or HTML element is required.");
     }
 
 
