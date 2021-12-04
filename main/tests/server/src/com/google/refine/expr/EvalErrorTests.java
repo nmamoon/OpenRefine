@@ -37,6 +37,7 @@ import com.google.refine.util.TestUtils;
 
 public class EvalErrorTests extends RefineTest {
 
+
     @Override
     @BeforeTest
     public void init() {
@@ -49,6 +50,10 @@ public class EvalErrorTests extends RefineTest {
         TestUtils.isSerializedTo(e, "{\"type\":\"error\",\"message\":\"This is a critical error\"}");
     }
 
+    /**
+     * Test error report for innerHtml()
+     * Verifies that innerHtml() will correctly print out argument type when provided improper input.
+     */
     @Test
     public void testInnerHtml() {
         Assert.assertTrue(invoke("innerHtml") instanceof EvalError);
@@ -58,6 +63,10 @@ public class EvalErrorTests extends RefineTest {
         Assert.assertEquals(evalError.toString(), "innerHtml() cannot work with this \'string\'. The first parameter is not an HTML Element.  Please first use parseHtml(string) and select(query) prior to using this function");
     }
 
+    /**
+     * Test error report for wholeText()
+     * Verifies that wholeText() will correctly print out argument type when provided improper input.
+     */
     @Test
     public void testWholeText() {
         Assert.assertTrue(invoke("wholeText") instanceof EvalError);
@@ -67,6 +76,10 @@ public class EvalErrorTests extends RefineTest {
         Assert.assertEquals(evalError.toString(), "wholeText() cannot work with this \'string\' and failed as the first parameter is not an XML or HTML Element.  Please first use parseXml() or parseHtml() and select(query) prior to using this function");
     }
 
+    /**
+     * Test error report for xmlText()
+     * Verifies that xmlText() will correctly print out argument type when provided improper input.
+     */
     @Test
     public void testXmlText() {
         Assert.assertTrue(invoke("xmlText") instanceof EvalError);
