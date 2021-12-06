@@ -51,6 +51,7 @@ public class EvalErrorTests extends RefineTest {
     }
 
     /**
+     * CS427 Issue Link: https://github.com/OpenRefine/OpenRefine/issues/4193
      * Test error report for innerHtml()
      * Verifies that innerHtml() will correctly print out argument type when provided improper input.
      */
@@ -64,6 +65,7 @@ public class EvalErrorTests extends RefineTest {
     }
 
     /**
+     * CS427 Issue Link: https://github.com/OpenRefine/OpenRefine/issues/4193
      * Test error report for wholeText()
      * Verifies that wholeText() will correctly print out argument type when provided improper input.
      */
@@ -77,6 +79,7 @@ public class EvalErrorTests extends RefineTest {
     }
 
     /**
+     * CS427 Issue Link: https://github.com/OpenRefine/OpenRefine/issues/4193
      * Test error report for xmlText()
      * Verifies that xmlText() will correctly print out argument type when provided improper input.
      */
