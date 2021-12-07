@@ -44,6 +44,10 @@ import com.google.refine.grel.Function;
 
 public class WholeText implements Function {
 
+    /**
+     * CS427 Issue Link: https://github.com/OpenRefine/OpenRefine/issues/4193
+     * Update error report for improper input
+     */
     @Override
     public Object call(Properties bindings, Object[] args) {
         if (args.length == 1) {
